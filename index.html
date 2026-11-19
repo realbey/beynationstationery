@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="sw" data-theme="dark" data-accent="orange">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MFINANGA STATIONERY</title>
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<section id="login">
+  <div class="brandpane">
+    <div class="logo" id="loginLogo">M</div>
+    <h1 id="loginName">MFINANGA</h1>
+    <p class="sub" id="loginSub">STATIONERY</p>
+    <p data-i18n="tagline"></p>
+    <ul>
+      <li>🧾 <span data-i18n="f1"></span></li>
+      <li>📦 <span data-i18n="f2"></span></li>
+      <li>💸 <span data-i18n="f3"></span></li>
+      <li>📈 <span data-i18n="f4"></span></li>
+    </ul>
+  </div>
+  <div class="formpane">
+    <form class="formbox" id="loginForm" autocomplete="on">
+      <div class="loginlang"><select id="loginLang" aria-label="Language"><option value="sw">Kiswahili</option><option value="en">English</option></select></div>
+      <h2><span data-i18n="welcomeBack"></span> 👋</h2>
+      <p class="mut" data-i18n="loginSub"></p>
+      <label for="email"><span data-i18n="email"></span> *</label>
+      <input id="email" type="email" autocomplete="username" required>
+      <label for="password"><span data-i18n="password"></span> *</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <button id="loginBtn" class="btn big" type="submit"><span data-i18n="login"></span> →</button>
+      <p id="loginErr" class="err" role="alert"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ APP SHELL ============ -->
+<div id="shell" hidden>
+  <div id="backdrop"></div>
+  <aside id="sidebar">
+    <div class="brandrow">
+      <div class="logo sm" id="bizLogo">M</div>
+      <div class="brandtxt"><b id="bizName">MFINANGA</b><small class="mut" id="bizSub">STATIONERY</small></div>
+    </div>
+    <nav id="nav" aria-label="Main"></nav>
+    <div class="userchip">
+      <div class="av" id="chipAv">?</div>
+      <div class="usertxt"><b id="chipName"></b><small class="mut" id="chipRole"></small></div>
+    </div>
+    <button id="collapseBtn" class="btn ghost sm collapse" aria-label="Collapse menu">«</button>
+  </aside>
+  <main>
+    <header>
+      <button id="menuBtn" class="btn ghost" aria-label="Menu">☰</button>
+      <b id="who"></b>
+      <select id="lang" aria-label="Language"><option value="sw">SW</option><option value="en">EN</option></select>
+      <select id="theme" aria-label="Theme"><option value="dark">🌙</option><option value="light">☀️</option></select>
+      <select id="accent" aria-label="Accent colour">
+        <option value="orange">🟠</option><option value="blue">🔵</option><option value="purple">🟣</option><option value="emerald">🟢</option>
+      </select>
+      <button id="logout" class="btn ghost" data-i18n="logout"></button>
+    </header>
+    <div id="view"></div>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+<div id="printArea" aria-hidden="true"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/translations.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
